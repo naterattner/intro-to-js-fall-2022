@@ -1,46 +1,40 @@
-<!doctype HTML>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <title>NYC Neighborhoods</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
     <link rel="stylesheet" href="styles.css">
-    <title>Nate's JavaScripting Master's Student Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Open+Sans:wght@200;300;500;600">
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+   <script src="data/nycneighborhoods.js"></script>
+   
   </head>
   <body>
-    <div class="formatText">
-      <h1>This is Nate's map!</h1>
-      <section id="joke">  
-        <p>Q: Why did the programmer quit his job?
-        A: Because he didn't get arrays.</p>
-        <p>Q: What's the difference between an academic and a genie?
-        A: One grants wishes, the other wishes for grants.</p>
-        <p>Q: Did you hear about the mathematician who's afraid of negative numbers?
-        A: He'll stop at nothing to avoid them.
+    <div class="container">
+      <h1>NYC JAM</h1>
+      <div class="intro-container">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         </p>
-        <p>See more jokes <a href="https://www.rd.com/list/short-jokes/">here</a>.
+        <p>
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
         </p>
-      </section>
-      <section id="poem">
-        <p>Whose woods these are I think I know.
-          His house is in the village though;
-          He will not see me stopping here
-          To watch his woods fill up with snow.
-          My little horse must think it queer
-          To stop without a farmhouse near
-          Between the woods and frozen lake
-          The darkest evening of the year.
-          He gives his harness bells a shake
-          To ask if there is some mistake.
-          The only other sound’s the sweep
-          Of easy wind and downy flake.
-          The woods are lovely, dark and deep,
-          But I have promises to keep,
-          And miles to go before I sleep,
-          And miles to go before I sleep.
+        <div id="static-chart-container"></div>
+        <p>
+          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </p>
-        <p class="author">-Robert Frost
-        </p>
-      </section>
+        <p>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
+        </p>  
+      </div>
+      <div id="map"></div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

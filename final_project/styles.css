@@ -1,47 +1,40 @@
+/* PAGE */
+
 body {
-    background-color: rgb(118, 92, 120);
+    background-color: #171717 !important;
+    font-family: 'Open Sans', sans-serif !important;
   }
 
 h1 {
-    font-size: 50px;
-    font-weight: bold;
+    font-size: 75px !important;
+    font-weight: bold !important;
+    font-family: 'Press Start 2P' !important;
+    text-align: center;
+    color: #DD4446;
+    -webkit-text-stroke: 1.5px white;
+}
+
+.intro-container{
+  width:70% !important;
+  margin:0 auto !important;
+  margin-bottom:30px !important;
 }
 
 p {
-    font-size: 30px;
+    font-size: 18px !important;
+    color: white !important;
+    font-weight:300 !important;
 }
 
 .formatText {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    white-space: pre-line;
+    color: rgb(255, 255, 255) !important;
+    text-align: center !important;
+    font-family: 'Roboto', sans-serif !important;
+    white-space: pre-line !important;
   }
 
-  #joke {
-    border: 5px solid rgb(16, 29, 55);
-    background-color: rgb(118, 125, 158);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin: 0 auto;
-    color: rgb(255, 230, 204);
-  }
-
-  #poem {
-	border: 5px solid rgb(255, 255, 255);
-    background-color: rgb(125, 185, 183);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin: 0 auto;
-    color: rgb(0, 0, 0);
-  }
-
-  .author {
-	text-align: right;
-  }
+/* MAP */
+  #map { 
+    height: 600px !important; 
+    width: 75% !important;
+}
