@@ -12,7 +12,7 @@
    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
    crossorigin=""></script>
    <script src="data/nycneighborhoods.js"></script>
-   <script src="data/park_data.js"></script>
+   <script src="data/parkData.js"></script>
    
   </head>
   <body>
@@ -33,18 +33,51 @@
           Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
         </p>  
       </div>
+
+      <hr>
+
       <div class="ui-elements">
-        <div class="category-button-block">
-          <!-- <button class="category-button pressed" id='overall' onclick="changeCategory('overall')">Overall</button> -->
-          <button class="category-button pressed" id="pan-to-flatbush">Park 1</button>
-          <button class="category-button">Park 2</button>
-          <button class="category-button">Park 3</button>
+        <div class="park-button-block">
+          <div class="row">
+            <div class="column borough-title">
+              <h4>Brooklyn</h4>
+            </div>
+            <div class="column">
+              <button class="park-button" value="Dean Playground" onclick=panToPark(this.value)>Dean Playground</button>
+            </div>
+            <div class="column">
+              <button class="park-button" value="Stroud Playground" onclick=panToPark(this.value)>Stroud Playground</button>
+            </div>
+            <div class="column">
+              <button class="park-button" value="American Playground" onclick=panToPark(this.value)>American Playground</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column borough-title">
+              <h4>Manhattan</h4>
+            </div>
+            <div class="column">
+              <button class="park-button" value="Bellevue South Park" onclick=panToPark(this.value)>Bellevue South Park</button>
+            </div>
+            <div class="column">
+              <button class="park-button" value="Carl Schurz Park" onclick=panToPark(this.value)>Carl Schurz Park</button>
+            </div>
+            <div class="column">
+              <button class="park-button" value="Sara D. Roosevelt Park" onclick=panToPark(this.value)>Sara D. Roosevelt Park</button>
+            </div>
+          </div>
+
+
+          <!-- <div>
+            <button class="park-button" id="pan-to-dean" value="Dean Playground" onclick=panToPark(this.value)>Dean Playground</button>
+          </div>
+          <div>
+            <button class="category-button" value="Stroud Playground" onclick=panToPark(this.value)>Stroud Playground</button>
+            <button class="category-button">Park 3</button>
+          </div> -->
+
         </div>
 
-        <div class="filter-block">
-        <!-- <label for="series-dropdown">Use dropdown to highlight</label> -->
-        <select id="series-dropdown" name="series-dropdown"></select>
-        </div>
       </div>
       <div id="map-container">
         <div id="map"></div>

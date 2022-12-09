@@ -8,7 +8,7 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.pn
 	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
 }).addTo(myMap);
 
-myMap.setView([40.7080962, -73.9717345], 12);
+myMap.setView([40.7080962, -73.9717345], 13);
 
 //
 // L.geoJSON(nyc).addTo(myMap);
@@ -20,13 +20,40 @@ console.log(parkData)
 // const parkLayer = L.geoJSON().addTo(myMap);
 // parkLayer.addData(parkData);
 
+let basketBallIcon = new L.icon({
+	iconUrl: 'imgs/basketball_icon.png',
+	iconSize:     [35, 35], // size of the icon
+  });
+
 const parkLayer = L.geoJSON(parkData, {
 	onEachFeature: function (feature, layer) {
-	  layer.bindPopup('<h1>'+feature.properties.name+'</h1><p>name: '+feature.properties.name+'</p>');
-	}
+	  layer.bindPopup('<h3>'+feature.properties.name+'</h3><p class="popup-text">'+feature.properties.sts+'</p>' + "<img src='" + feature.properties.img_path + "'/>" + "<a class='popup-link' target='blank' href='" + feature.properties.link + "'>More info</a>");
+	  console.log("<img src='" + feature.properties.img_path + "'/>");
+	},
+	pointToLayer: function(point, latlng) {
+		return L.marker(latlng, { icon: basketBallIcon })
+	  }
   }).addTo(myMap);
 
+// const iconOptions = {
+//     iconSize:     [38, 95], // size of the icon
+//     shadowSize:   [50, 64], // size of the shadow
+//     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+//     shadowAnchor: [4, 62],  // the same for the shadow
+//     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+// };
 
+// // L.geoJSON(parkData, {
+// //     pointToLayer: function (feature, latlng) {
+// //         return L.circleMarker(latlng, geojsonMarkerOptions);
+// //     }
+// // }).addTo(myMap);
+
+// L.geoJSON(parkData, {
+//     pointToLayer: function (feature, latlng) {
+//         return L.Icon(latlng, iconOptions);
+//     }
+// }).addTo(myMap);
 
 // const timesSquare = L.marker([40.7580, -73.9855]).addTo(myMap);
 // timesSquare.bindPopup("<b>Times Square</b>");
@@ -56,16 +83,32 @@ const parkLayer = L.geoJSON(parkData, {
 //     }
 // }).addTo(myMap);
 
-$("#pan-to-flatbush").click(function() {
+
+$("#pan-to-dean").click(function() {
     // find flatbush neighborhood property in the dataset
-    let flatbush = nyc.features.find(function(feature) {
-        return feature.properties.neighborhood === "Flatbush";
+    let dean = parkData.features.find(function(feature) {
+        return feature.properties.name === "Dean Playground";
     });
-    console.log(flatbush);
+    console.log(dean);
 	// find the coordinates of flatbush property
-    let coordinates = nyc.features.find(function(feature) {
-        return feature.properties.neighborhood === "Flatbush";
+    let coordinates = parkData.features.find(function(feature) {
+        return feature.properties.name === "Dean Playground";
     }).geometry.coordinates;
     console.log(coordinates);
-    myMap.panTo(new L.LatLng(coordinates[0][0][1], coordinates[0][0][0]));
+    myMap.panTo(new L.LatLng(coordinates[1], coordinates[0]));
 });
+
+function panToPark(val){
+	// find the park in the dataset
+	// let park = parkData.features.find(function(feature) {
+    //     return feature.properties.name === val;
+    // });
+	// console.log(park);
+	console.log('Panning to ' + val)
+	// find the coordinates of the park and pan to it
+    let coordinates = parkData.features.find(function(feature) {
+        return feature.properties.name === val;
+    }).geometry.coordinates;
+    console.log(coordinates);
+    myMap.panTo(new L.LatLng(coordinates[1], coordinates[0]));
+  }
