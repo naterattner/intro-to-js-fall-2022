@@ -33,8 +33,87 @@ p {
     white-space: pre-line !important;
   }
 
+/* UI ELEMENT STYLES*/
+.ui-elements {
+  margin-bottom:30px !important;
+}
+
+.category-button-block {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-bottom:5px !important;
+}
+
+.filter-block {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.filter-block label{
+  margin-right: 5px !important;
+  font-size:0.9em !important;
+  font-style:italic !important;
+  font-weight:300 !important;
+}
+
+#series-dropdown {
+  font-size:0.9em !important;
+  font-weight:200 !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid #747474 !important;
+  text-align:center !important;
+  /* font-style:italic; */
+}
+
+button {
+  text-transform: uppercase !important;
+  margin: 7px !important;
+  font-size:0.8em !important;
+
+  background-color: #FFFFFF !important;
+  border: 1px solid #222222 !important;
+  border-radius: 3px !important;
+  box-sizing: border-box !important;
+  color: #222222 !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  line-height: 20px !important;
+  outline: none !important;
+  padding: 5px 8px !important; 
+  position: relative !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  touch-action: manipulation !important;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  width: auto !important;
+}
+
+button:hover {
+  background-color: #f0f0f0 !important;
+  /* border-color: #000000; */
+}
+
+button.pressed {
+  background-color: #f0f0f0 !important;
+  /* border-color: #000000; */
+  transform: scale(1.02) !important;
+}
+
 /* MAP */
-  #map { 
-    height: 600px !important; 
-    width: 75% !important;
+#map-container{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+#map { 
+  height: 600px !important; 
+  width: 75% !important;
+    
 }
