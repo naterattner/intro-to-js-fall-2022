@@ -3,9 +3,10 @@ let myMap;
 myMap = L.map("map");
 
 // create tile layer
-L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
-	maxZoom: 20,
-	attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+L.tileLayer('https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png', {
+	maxZoom: 21,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles courtesy of <a href="http://www.openstreetmap.bzh/" target="_blank">Breton OpenStreetMap Team</a>',
+	
 }).addTo(myMap);
 
 myMap.setView([40.7080962, -73.9717345], 13);
