@@ -11,7 +11,7 @@ h1 {
     font-family: 'Press Start 2P' !important;
     text-align: center !important;
     color: #DD4446 !important;
-    -webkit-text-stroke: 1.5px white !important;
+    -webkit-text-stroke: 1.5px white;
 }
 
 .intro-container{
@@ -94,18 +94,18 @@ button {
   transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s !important;
   user-select: none !important;
   -webkit-user-select: none !important;
-  /* width: auto !important; */
+  
   width:100% !important;
 }
 
 button:hover {
   background-color: #f0f0f0 !important;
-  /* border-color: #000000; */
+  
 }
 
 button.pressed {
   background-color: #f0f0f0 !important;
-  /* border-color: #000000; */
+  
   transform: scale(1.02) !important;
 }
 
@@ -136,6 +136,6 @@ button.pressed {
 }
 
 img {
-  width:100% !important;
-  height:100% !important;
+  width:100%;
+  height:100%;
 }
